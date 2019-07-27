@@ -31,7 +31,9 @@ class ColoredSlider implements AfterViewInit {
   double _value = 0;
 
   @Input()
-  set value(num v) => _value = v.toDouble();
+  set value(num v) {
+    _value = v.toDouble();
+  }
 
   double get value => _value;
 

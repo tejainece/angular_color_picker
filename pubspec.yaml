@@ -9,8 +9,8 @@ environment:
 
 dependencies:
   angular: ^5.3.0
-  lib_colors: ^1.0.5
-  ng_bind:
+  lib_colors: ^1.0.6
+  ng_bind: ^1.0.0
 
 dev_dependencies:
   angular_test: ^2.3.0

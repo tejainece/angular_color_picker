@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:angular/angular.dart';
+import 'package:angular_color_picker/src/controls/opacity_slider/opacity_slider.dart';
 import 'package:ng_bind/ng_bind.dart';
 import 'package:angular_color_picker/src/colored_slider/colored_slider.dart';
 
@@ -15,6 +16,7 @@ import 'package:lib_colors/lib_colors.dart';
     NgIf,
     NumBinder,
     ColoredSlider,
+    OpacitySlider,
   ],
   providers: [],
 )
@@ -26,6 +28,7 @@ class HslSlider implements AfterViewInit {
   @Input()
   set value(Color color) {
     _value = color.toHsl;
+    print(_value);
     _updatePainters();
   }
 
@@ -66,6 +69,11 @@ class HslSlider implements AfterViewInit {
     if(v < 0) v = 0;
     if(v > 1.0) v = 1.0;
     final newV = value.clone(l: v * 100);
+    _changeEmitter.add(newV);
+  }
+
+  void opacityChanged(double v) {
+    final newV = value.clone(a: v);
     _changeEmitter.add(newV);
   }
 

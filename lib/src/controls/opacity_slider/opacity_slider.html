@@ -1,0 +1,7 @@
+<div class="component">
+    <div class="header">
+        <span>Alpha</span>
+        <input type="number" min="0.0" max="1.0" [bind]="value" (bind)="opacityChanged">
+    </div>
+    <colored-slider [painter]="paint" (change)="opacityChanged" [value]="value" [renderOn]="color"></colored-slider>
+</div>

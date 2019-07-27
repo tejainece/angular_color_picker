@@ -19,3 +19,4 @@
     </div>
     <colored-slider [painter]="lightnessPaint" (change)="lightnessChanged" [value]="value.l/100" [renderOn]="value"></colored-slider>
 </div>
+<opacity-slider [value]="value.a" (change)="opacityChanged" [color]="value"></opacity-slider>
