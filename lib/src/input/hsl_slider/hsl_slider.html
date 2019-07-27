@@ -1,0 +1,21 @@
+<div class="component">
+    <div class="header">
+        <span>Hue</span>
+        <input type="number" min="0" max="360" [bind]="value.h" (bind)="hueChanged($event/360)">
+    </div>
+    <colored-slider [painter]="huePaint" (change)="hueChanged" [value]="value.h/360" [renderOn]="value"></colored-slider>
+</div>
+<div class="component">
+    <div class="header">
+        <span>Saturation</span>
+        <input type="number" min="0" max="100" [value]="value.s" [bind]="value.s" (bind)="saturationChanged($event/100)">
+    </div>
+    <colored-slider [painter]="saturationPaint" (change)="saturationChanged" [value]="value.s/100" [renderOn]="value"></colored-slider>
+</div>
+<div class="component">
+    <div class="header">
+        <span>Lightness</span>
+        <input type="number" min="0" max="100" [value]="value.l" [bind]="value.l" (bind)="lightnessChanged($event/100)">
+    </div>
+    <colored-slider [painter]="lightnessPaint" (change)="lightnessChanged" [value]="value.l/100" [renderOn]="value"></colored-slider>
+</div>
