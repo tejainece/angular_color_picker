@@ -1,6 +1,6 @@
 name: angular_color_picker
-description: RGB, HSL color pickers for Angular Dart
-version: 1.0.0
+description: Flexible color picker for Angular Dart. Choose between RGB, HSL, HSV, pallete, history.
+version: 1.0.1
 homepage: https://github.com/tejainece/angular_color_picker
 author: Ravi Teja Gudapati <tejainece@gmail.com>
 

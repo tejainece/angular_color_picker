@@ -1,7 +1,7 @@
 import 'package:angular_color_picker/angular_color_picker.dart';
 import 'package:lib_colors/lib_colors.dart';
 import 'package:angular/angular.dart';
-import 'main.template.dart' as ng;
+import 'awesome_color_picker/main.template.dart' as ng;
 
 @Component(
   selector: 'my-app',

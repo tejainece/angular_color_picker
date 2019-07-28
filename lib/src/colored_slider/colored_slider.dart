@@ -56,7 +56,7 @@ class ColoredSlider implements AfterViewInit {
   _PickingState _picking;
 
   void _endPicking() async {
-    if(_picking == null) return;
+    if (_picking == null) return;
 
     final picking = _picking;
     _picking = null;

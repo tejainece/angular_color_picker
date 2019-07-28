@@ -51,29 +51,29 @@ class HslSlider implements AfterViewInit {
   }
 
   void hueChanged(v) {
-    if(v < 0) v = 0;
-    if(v > 1.0) v = 1.0;
+    if (v < 0) v = 0;
+    if (v > 1.0) v = 1.0;
     final newV = value.clone(h: v * 360);
     _changeEmitter.add(newV);
   }
 
   void saturationChanged(v) {
-    if(v < 0) v = 0;
-    if(v > 1.0) v = 1.0;
+    if (v < 0) v = 0;
+    if (v > 1.0) v = 1.0;
     final newV = value.clone(s: v * 100);
     _changeEmitter.add(newV);
   }
 
   void lightnessChanged(v) {
-    if(v < 0) v = 0;
-    if(v > 1.0) v = 1.0;
+    if (v < 0) v = 0;
+    if (v > 1.0) v = 1.0;
     final newV = value.clone(l: v * 100);
     _changeEmitter.add(newV);
   }
 
   void opacityChanged(double v) {
-    if(v < 0) v = 0;
-    if(v > 1.0) v = 1.0;
+    if (v < 0) v = 0;
+    if (v > 1.0) v = 1.0;
     final newV = value.clone(a: v);
     _changeEmitter.add(newV);
   }

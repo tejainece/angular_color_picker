@@ -48,8 +48,8 @@ class OpacitySlider implements AfterViewInit {
   }
 
   void opacityChanged(v) {
-    if(v < 0) v = 0;
-    if(v > 1.0) v = 1.0;
+    if (v < 0) v = 0;
+    if (v > 1.0) v = 1.0;
     _changeEmitter.add(v);
   }
 
