@@ -10,7 +10,7 @@ environment:
 dependencies:
   angular: ^5.3.0
   lib_colors: ^1.0.14
-  ng_bind: ^1.0.0
+  ng_bind: ^1.0.2
 
 dev_dependencies:
   angular_test: ^2.3.0
