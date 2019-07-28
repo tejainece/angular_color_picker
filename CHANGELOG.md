@@ -1,3 +1,7 @@
+## 1.0.2
+
++ Support for named css colors
+
 ## 1.0.1
 
 + pub.dev fixes

@@ -69,7 +69,6 @@ class ColorText implements OnInit {
       _changeEmitter.add(newColor);
     } catch (e) {
       // TODO
-      rethrow;
     }
   }
 
