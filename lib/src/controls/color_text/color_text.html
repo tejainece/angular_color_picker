@@ -1,9 +1,11 @@
-<div class="area">
-    <input type="text" [bind]="text" (bind)="textChanged">
-</div>
+<div class="container" [style.background-color]="text">
+    <div class="area">
+        <input type="text" [bind]="text" (bind)="textChanged" [style.color]="fontColor">
+    </div>
 
-<div class="tabs">
-    <div class="tab" [class.selected]="tab == 0" (click)="tab = 0">HEX</div>
-    <div class="tab" [class.selected]="tab == 1" (click)="tab = 1">RGB</div>
-    <div class="tab" [class.selected]="tab == 2" (click)="tab = 2">HSL</div>
+    <div class="tabs">
+        <div class="tab" [class.isDark]="value.isDark" [class.selected]="tab == 0" (click)="tab = 0">HEX</div>
+        <div class="tab" [class.isDark]="value.isDark" [class.selected]="tab == 1" (click)="tab = 1">RGB</div>
+        <div class="tab" [class.isDark]="value.isDark" [class.selected]="tab == 2" (click)="tab = 2">HSL</div>
+    </div>
 </div>

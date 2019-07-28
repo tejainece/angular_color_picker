@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:angular/angular.dart';
 import 'package:angular_color_picker/angular_color_picker.dart';
+import 'package:angular_color_picker/src/controls/color_text/color_text.dart';
 
 import 'package:lib_colors/lib_colors.dart';
-import 'package:ng_bind/ng_bind.dart';
 
 @Component(
   selector: 'awesome-color-picker',
@@ -13,7 +13,7 @@ import 'package:ng_bind/ng_bind.dart';
   directives: [
     NgFor,
     NgIf,
-    TextBinder,
+    ColorText,
     RgbSlider,
     HslSlider,
   ],
@@ -25,12 +25,14 @@ class AwesomeColorPicker {
     _value = color.clone();
   }
 
-  Rgb _value = white;
+  Color _value = white;
 
-  Rgb get value => _value;
+  Color get value => _value;
 
-  final _changeEmitter = StreamController<Rgb>();
+  int tab = 0;
+
+  final _changeEmitter = StreamController<Color>();
 
   @Output()
-  Stream<Rgb> get change => _changeEmitter.stream;
+  Stream<Color> get change => _changeEmitter.stream;
 }

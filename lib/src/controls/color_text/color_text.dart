@@ -26,11 +26,10 @@ class ColorText implements OnInit {
 
   Color get value => _value;
 
-  @HostBinding('style.background-color')
   String text;
 
   @HostBinding('style.color')
-  String get fontColor => value.isDark? 'white': 'black';
+  String get fontColor => (value.isDark && value.a > 0.3) ? 'white' : 'black';
 
   void _updateText() {
     switch (tab) {
@@ -59,30 +58,18 @@ class ColorText implements OnInit {
     _updateText();
   }
 
-
   @override
   void ngOnInit() {
     _updateText();
   }
 
   void textChanged(String v) {
-    Color newColor;
     try {
-      switch (tab) {
-        case 0:
-        // TODO
-          break;
-        case 1:
-          newColor = Rgb.parse(v);
-          break;
-        case 2:
-          newColor = Hsl.parse(v);
-          break;
-      }
-
+      Color newColor = Color.parse(v);
       _changeEmitter.add(newColor);
-    } catch(e) {
+    } catch (e) {
       // TODO
+      rethrow;
     }
   }
 
