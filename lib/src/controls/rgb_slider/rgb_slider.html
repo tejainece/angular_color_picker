@@ -1,3 +1,22 @@
-<colored-slider [painter]="redPaint" (change)="redChanged" [value]="value.r/255" [renderOn]="value"></colored-slider>
-<colored-slider [painter]="greenPaint" (change)="greenChanged" [value]="value.g/255" [renderOn]="value"></colored-slider>
-<colored-slider [painter]="bluePaint" (change)="blueChanged" [value]="value.b/255" [renderOn]="value"></colored-slider>
+<div class="component">
+    <div class="header">
+        <span>Red</span>
+        <input type="number" min="0" max="255" [bind]="value.r" (bind)="redChanged($event/255)">
+    </div>
+    <colored-slider [painter]="redPaint" (change)="redChanged" [value]="value.r/255" [renderOn]="value"></colored-slider>
+</div>
+<div class="component">
+    <div class="header">
+        <span>Green</span>
+        <input type="number" min="0" max="255" [bind]="value.g" (bind)="greenChanged($event/255)">
+    </div>
+    <colored-slider [painter]="greenPaint" (change)="greenChanged" [value]="value.g/255" [renderOn]="value"></colored-slider>
+</div>
+<div class="component">
+    <div class="header">
+        <span>Blue</span>
+        <input type="number" min="0" max="255" [bind]="value.b" (bind)="blueChanged($event/255)">
+    </div>
+    <colored-slider [painter]="bluePaint" (change)="blueChanged" [value]="value.b/255" [renderOn]="value"></colored-slider>
+</div>
+<opacity-slider [value]="value.a" (change)="opacityChanged" [color]="value"></opacity-slider>

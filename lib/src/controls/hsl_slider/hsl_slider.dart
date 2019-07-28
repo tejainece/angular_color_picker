@@ -28,7 +28,6 @@ class HslSlider implements AfterViewInit {
   @Input()
   set value(Color color) {
     _value = color.toHsl;
-    print(_value);
     _updatePainters();
   }
 
@@ -73,6 +72,8 @@ class HslSlider implements AfterViewInit {
   }
 
   void opacityChanged(double v) {
+    if(v < 0) v = 0;
+    if(v > 1.0) v = 1.0;
     final newV = value.clone(a: v);
     _changeEmitter.add(newV);
   }
