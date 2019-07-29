@@ -1,8 +1,8 @@
-<color-text [value]="value" (change)="value = $event"></color-text>
+<color-text [value]="value" (change)="valueChanged"></color-text>
 
 <div class="main-area">
-    <rgb-slider *ngIf="tab == 0" [value]="value" (change)="value = $event"></rgb-slider>
-    <hsl-slider *ngIf="tab == 1" [value]="value" (change)="value = $event"></hsl-slider>
+    <rgb-slider *ngIf="tab == 0" [value]="value" (change)="valueChanged"></rgb-slider>
+    <hsl-slider *ngIf="tab == 1" [value]="value" (change)="valueChanged"></hsl-slider>
 </div>
 
 <div class="tabs">

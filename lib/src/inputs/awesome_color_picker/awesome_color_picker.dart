@@ -21,7 +21,8 @@ import 'package:lib_colors/lib_colors.dart';
 )
 class AwesomeColorPicker {
   @Input()
-  set value(Color color) {
+  set value(color) {
+    if(color is String) color = Color.parse(color);
     _value = color.clone();
   }
 
@@ -30,6 +31,10 @@ class AwesomeColorPicker {
   Color get value => _value;
 
   int tab = 0;
+
+  void valueChanged(Color value) {
+    _changeEmitter.add(value);
+  }
 
   final _changeEmitter = StreamController<Color>();
 
